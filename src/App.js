@@ -1,23 +1,32 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+
+import { Epg, Layout } from "planby";
+
+// Import hooks
+import { useApp } from "./useApp.jsx";
+
+// Import components
+import { Timeline, ChannelItem, ProgramItem } from "./components";
 
 function App() {
+  const { isLoading, getEpgProps, getLayoutProps } = useApp();
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <div style={{ height: "80vh", width: "100%" }}>
+        <Epg isLoading={isLoading} {...getEpgProps()}>
+          <Layout
+            {...getLayoutProps()}
+            renderTimeline={(props) => <Timeline {...props} />}
+            renderProgram={({ program, ...rest }) => (
+              <ProgramItem key={program.data.id} program={program} {...rest} />
+            )}
+            renderChannel={({ channel }) => (
+              <ChannelItem key={channel.uuid} channel={channel} />
+            )}
+          />
+        </Epg>
+      </div>
     </div>
   );
 }

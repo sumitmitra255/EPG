@@ -1,0 +1,15 @@
+.program-div:nth-child(even){
+    background: #252525;
+
+}
+.program-div:nth-child(odd){
+    background:#303030 ;
+
+}
+.channel-logo{
+height: 30px;
+width: 30px;
+border-radius: 8px;
+position: relative;
+
+}
