@@ -4,7 +4,7 @@ import { fetchChannels, fetchEpg } from "./helpers";
 
 import { useEpg } from "planby";
 
-// Import theme
+// Import themea
 import { theme } from "./helpers/theme";
 
 export function useApp() {
@@ -14,16 +14,16 @@ export function useApp() {
 
   const channelsData = React.useMemo(() => channels, [channels]);
   const epgData = React.useMemo(() => epg, [epg]);
-console.log(epgData,"epgdata")
+
   const { getEpgProps, getLayoutProps } = useEpg({
     channels: channelsData,
-    epg: epgData,
+    epg: [],
     dayWidth: 7200,
     sidebarWidth: 100,
     itemHeight: 80,
     isSidebar: true,
-    isTimeline: true,
-    isLine: true,
+    isTimeline: false,
+    isLine: false,
     // startDate: "2023-04-17T00:00:00",
     // endDate: "2023-04-18T24:00:00",
     isBaseTimeFormat: true,
@@ -34,7 +34,7 @@ console.log(epgData,"epgdata")
 
     setIsLoading(true);
     const epg = await fetchEpg();
-    console.log(epg)
+    // console.log(epg)
     const channels = await fetchChannels();
     setEpg(epg);
     setChannels(channels);

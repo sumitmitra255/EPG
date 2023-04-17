@@ -1,8 +1,9 @@
 export const theme = {
   primary: {
     600: "#1a202c",
-    900: "#191919"
+    900: "rgb(36, 36, 36)"
   },
+
   grey: { 300: "#d1d1d1" },
   white: "#fff",
   green: {

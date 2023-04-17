@@ -4,7 +4,7 @@ import { ChannelBox, ChannelLogo } from "planby";
 import "./styleitem.css"
 export const ChannelItem = ({ channel }) => {
   const { position, logo } = channel;
-  console.log(position)
+  // console.log(position)
   return (
 
   <div style={{position:"absolute",top:position.top,height:"100px", width:"100px",display:"flex",alignItems:"center",justifyContent:"center"

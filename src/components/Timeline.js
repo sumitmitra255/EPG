@@ -20,7 +20,7 @@ export function Timeline({
     numberOfHoursInDay,
     isBaseTimeFormat
   );
-console.log(offsetStartHoursRange)
+// console.log(offsetStartHoursRange)
   const renderTime = (index) => (
     <TimelineBox key={index} width={hourWidth}>
       <TimelineTime>
@@ -33,7 +33,7 @@ console.log(offsetStartHoursRange)
   const renderDividers = () =>
     dividers.map((_, index) => 
     {
-      console.log(index,hourWidth)
+      // console.log(index,hourWidth)
       return (
       <TimelineDivider key={index} width={hourWidth} />
       )

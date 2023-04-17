@@ -7,7 +7,7 @@ const api = async () => {
   await axios.get("http://216.48.179.109/catalog_lists/live-channel?auth_token=jqeGWxRKK7FK5zEk3xCM")
     .then((res) => {
       let data = res.data
-       console.log(data.data.catalog_list_items)
+      //  console.log(data.data.catalog_list_items)
       data.data.catalog_list_items.forEach(element => {
         channels.push({ uuid: element.content_id, logo: element.thumbnails.small_2_3.url })
 
@@ -51,7 +51,7 @@ return channels
 
 export const fetchEpg = async () =>
 {
-  console.log(programs)
+  // console.log(programs)
   return programs
 }
   //new Promise((res) => setTimeout(() => res(epg), 500));
